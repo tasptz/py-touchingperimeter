@@ -8,12 +8,15 @@ from touchingperimeter import *
 def main():
     #random.seed(0)
     bin = Rect(0, 0, 100, 100)
-    fig = plt.figure()
-    for i in range(2):
-        ax = fig.add_subplot(1, 2, 1 + i, aspect='equal')
-        ax.set_xlim(bin.x - 1, bin.w + 1)
-        ax.set_ylim(bin.y - 1, bin.h + 1)
-        ax.set_axis_off()
+
+    fig, ax = plt.subplots(1, 2, figsize=[8, 4])
+    ax[0].set_title('Packed boxes')
+    ax[1].set_title('Free space')
+    for a in ax:
+        a.set_xlim(bin.x - 1, bin.w + 1)
+        a.set_ylim(bin.y - 1, bin.h + 1)
+        a.axis('equal')
+        a.axis('off')
 
     def plot_rect(r, ax=0, idx=0, **kwargs):
         ax = fig.axes[ax]
