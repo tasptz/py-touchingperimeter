@@ -41,6 +41,9 @@ class Rect:
     def __str__(self):
         return '({}, {}) {} x {}'.format(self.x, self.y, self.w ,self.h)
 
+    def __repr__(self):
+        return str(self)
+
     def intersection(self, rect):
         if self.x >= rect.r or self.r <= rect.x or self.y >= rect.t or self.t <= rect.y:
             return None
