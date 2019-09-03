@@ -32,6 +32,9 @@ class Rect:
     def br(self):
         return self.r, self.y
 
+    def __eq__(self, r):
+        return (self.x, self.y, self.w, self.h) == (r.x, r.y, r.w, r.h)
+
     def __lt__(self, r):
         return self.area() < r.area()
 
