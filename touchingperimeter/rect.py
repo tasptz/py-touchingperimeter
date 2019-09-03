@@ -57,7 +57,7 @@ class Rect:
         i = self.intersection(r)
         if i is None:
             return [self.clone()]
-        if self.inside(r):
+        if i == self:
             return []
         tl = self.inside(r.tl)
         tr = self.inside(r.tr)
