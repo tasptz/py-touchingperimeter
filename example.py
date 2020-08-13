@@ -13,9 +13,9 @@ def main():
     ax[0].set_title('Packed boxes')
     ax[1].set_title('Free space')
     for a in ax:
-        a.set_xlim(bin.x - 1, bin.w + 1)
-        a.set_ylim(bin.y - 1, bin.h + 1)
         a.axis('equal')
+        a.set_xlim(bin.x - 10, bin.w + 10)
+        a.set_ylim(bin.y - 10, bin.h + 10)
         a.axis('off')
 
     def plot_rect(r, ax=0, idx=0, **kwargs):
