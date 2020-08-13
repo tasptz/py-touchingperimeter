@@ -74,7 +74,7 @@ class Rect:
                 Rect(self.x, r.t, self.w, self.t - r.t),
                 Rect(r.r, self.y, self.r - r.r, self.h)
                 ]
-        if bl and not (tl or br or br):
+        if bl and not (tl or tr or br):
             return [
                 Rect(self.x, self.y, self.w, r.y - self.y),
                 Rect(self.x, self.y, r.x - self.x, self.h)
